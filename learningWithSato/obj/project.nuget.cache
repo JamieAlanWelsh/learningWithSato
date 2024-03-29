@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "ceJPzZtGct0L0SRAAR5vQ5quxjw7aI9CIyI5DGWOAMkOV9gIhDT3SRAjjElNXxuYCrz41yfjVYNJqs/QcRMZ5A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Jamie\\Documents\\GitHub\\learningWithSato\\learningWithSato\\LearningWithSato.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Jamie\\.nuget\\packages\\monogame.content.builder.task\\3.8.1.303\\monogame.content.builder.task.3.8.1.303.nupkg.sha512",
+    "C:\\Users\\Jamie\\.nuget\\packages\\monogame.framework.desktopgl\\3.8.1.303\\monogame.framework.desktopgl.3.8.1.303.nupkg.sha512",
+    "C:\\Users\\Jamie\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.28\\microsoft.netcore.app.ref.6.0.28.nupkg.sha512",
+    "C:\\Users\\Jamie\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.28\\microsoft.windowsdesktop.app.ref.6.0.28.nupkg.sha512",
+    "C:\\Users\\Jamie\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.28\\microsoft.aspnetcore.app.ref.6.0.28.nupkg.sha512",
+    "C:\\Users\\Jamie\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.28\\microsoft.netcore.app.host.win-x64.6.0.28.nupkg.sha512"
+  ],
+  "logs": []
+}
