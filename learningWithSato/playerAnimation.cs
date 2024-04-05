@@ -26,7 +26,7 @@ public class PlayerAnimation
         numFrames = (int)(playerSpriteSheet.Width/frameWidth);
     }
 
-    public void Draw(SpriteBatch spriteBatch, Vector2 position, Color color, float rotation, GameTime gameTime, float millisecondsPerFrame=100)
+    public void Draw(SpriteBatch spriteBatch, Vector2 position, Color color, float rotation, GameTime gameTime, float millisecondsPerFrame=100, SpriteEffects spriteEffects=SpriteEffects.None)
     {
         // iterate through the number of frames
         if (frameCounter < numFrames)
@@ -42,15 +42,14 @@ public class PlayerAnimation
                             rotation: rotation,
                             origin: new Vector2(16,24),
                             scale: Vector2.One,
-                            effects: SpriteEffects.None,
+                            effects: spriteEffects,
                             layerDepth: 0);
 
             timeSinceLastFrame += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
 
             if (timeSinceLastFrame > millisecondsPerFrame)
             {   
-                // we can do millisecondsPerFrame = 0, but it is better to
-                timeSinceLastFrame -= millisecondsPerFrame;
+                timeSinceLastFrame = 0;
                 frameCounter++;
                 if (frameCounter == numFrames)
                 {

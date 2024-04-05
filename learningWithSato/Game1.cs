@@ -14,17 +14,22 @@ public class Game1 : Game
     private Texture2D playerSpriteIdle;
     private Texture2D playerSpriteRun;
 
-    private SpriteFont baseFont;
-
     public Player player;
+
+    public Collider collider;
 
     public Game1()
     {
         _graphics = new GraphicsDeviceManager(this);
         Content.RootDirectory = "Content";
-        IsMouseVisible = true;
+        IsMouseVisible = false;
+        _graphics.PreferredBackBufferWidth = 1920;
+        _graphics.PreferredBackBufferHeight = 1080;
+        Window.IsBorderless = true;
+        _graphics.IsFullScreen = false;
+        // below code needed for shaders etc
+        // _graphics.ApplyChanges();
     }
-
     
     protected override void Initialize()
     {
@@ -39,12 +44,12 @@ public class Game1 : Game
     {
         _spriteBatch = new SpriteBatch(GraphicsDevice);
         
-        playerSpriteIdle = Content.Load<Texture2D>("Sprite Pack 4\\1 - Agent_Mike_Idle (32 x 32)");
-        playerSpriteRun = Content.Load<Texture2D>("Sprite Pack 4\\1 - Agent_Mike_Running (32 x 32)");
+        assetManager.load_textures(Content);
+        assetManager.load_fonts(Content);
 
-        baseFont = Content.Load<SpriteFont>("BaseFont");
+        player = new Player(new Vector2(100,100));
 
-        player = new Player(playerSpriteIdle, playerSpriteRun, new Vector2(100,100));
+        collider = new Collider(new Rectangle(300,150,32,32));
     }
 
     // runs once every tick (constantly)
@@ -54,6 +59,7 @@ public class Game1 : Game
             Exit();
 
         player.Update(gameTime);
+        collider.Update(player);
 
         base.Update(gameTime);
     }
@@ -64,15 +70,20 @@ public class Game1 : Game
     {
         GraphicsDevice.Clear(Color.CornflowerBlue);
 
-        _spriteBatch.Begin();
+        // sampler state point clamp makes pixel art sharp
+        _spriteBatch.Begin(transformMatrix: Matrix.CreateScale(4), samplerState: SamplerState.PointClamp);
 
         player.Draw(_spriteBatch, gameTime);
-
-        // drawing text to the screen can be useful for texting and debugging
-        _spriteBatch.DrawString(baseFont, player.position.ToString(), Vector2.One, Color.White);
+        collider.Draw(_spriteBatch);
 
         _spriteBatch.End();
-        // TODO: Add your drawing code here
+        
+        _spriteBatch.Begin();
+
+        // drawing text to the screen can be useful for texting and debugging
+        _spriteBatch.DrawString(assetManager.fonts["BaseFont"], player.position.ToString(), Vector2.One, Color.White);
+
+        _spriteBatch.End();
 
         base.Draw(gameTime);
     }
