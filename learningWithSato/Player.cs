@@ -33,6 +33,8 @@ public class Player
 
     public Rectangle hitbox;
 
+    public Vector2 prevPosition;
+
 
     // needs a constructor
     public Player(Vector2 position)
@@ -54,9 +56,11 @@ public class Player
     }
 
     // pressing keys will update the player state and dictate the animation
-    public void Update(GameTime gameTime)
+    public void Update(GameTime gameTime, Collider collider)
     {
         KeyboardState keyboard=Keyboard.GetState();
+
+        prevPosition = position;
 
         playerAnimationController = currentState.idle;
 
@@ -106,6 +110,12 @@ public class Player
         }
 
         hitbox = new Rectangle((int)position.X-16, (int)position.Y-16, 32, 32);
+
+        if (collider.hitbox.Intersects(hitbox))
+        {
+            position = prevPosition;
+            Debug.WriteLine("COLLISION!");
+        }
     }
 
     // Draw needs to have spriteBatch as a parameter to draw anything
