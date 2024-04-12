@@ -18,6 +18,8 @@ public class Game1 : Game
 
     public Collider collider;
 
+    public Map map;
+
     public Game1()
     {
         _graphics = new GraphicsDeviceManager(this);
@@ -50,6 +52,8 @@ public class Game1 : Game
         player = new Player(new Vector2(100,100));
 
         collider = new Collider(new Rectangle(300,150,32,32));
+
+        map = new Map();
     }
 
     // runs once every tick (constantly)
@@ -71,6 +75,8 @@ public class Game1 : Game
 
         // sampler state point clamp makes pixel art sharp
         _spriteBatch.Begin(transformMatrix: Matrix.CreateScale(4), samplerState: SamplerState.PointClamp);
+
+        map.Draw(_spriteBatch);
 
         player.Draw(_spriteBatch, gameTime);
         collider.Draw(_spriteBatch);

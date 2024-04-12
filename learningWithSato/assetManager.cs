@@ -22,7 +22,8 @@ public static class assetManager
         {
             "Sprite Pack 4\\1 - Agent_Mike_Idle (32 x 32)",
             "Sprite Pack 4\\1 - Agent_Mike_Running (32 x 32)",
-            "Sprite Pack 4\\8 - Roach_Hurt (32 x 32)"
+            "Sprite Pack 4\\8 - Roach_Hurt (32 x 32)",
+            "Sato Assets\\tileset"
         };
 
         foreach(string textureName in textureNames)

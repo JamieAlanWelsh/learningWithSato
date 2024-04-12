@@ -68,6 +68,18 @@
 /processorParam:TextureFormat=Color
 /build:Cave Tileset/Scaffolding_and_BG_Parts (16 x 16).png
 
+#begin Sato Assets/tileset.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sato Assets/tileset.png
+
 #begin Sprite Pack 4/1 - Agent_Mike_Bullet (16 x 16).png
 /importer:TextureImporter
 /processor:TextureProcessor

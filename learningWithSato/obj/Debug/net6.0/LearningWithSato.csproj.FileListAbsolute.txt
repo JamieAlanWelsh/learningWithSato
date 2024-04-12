@@ -58,3 +58,4 @@ C:\Users\Jamie\Documents\GitHub\learningWithSato\learningWithSato\bin\Debug\net6
 C:\Users\Jamie\Documents\GitHub\learningWithSato\learningWithSato\bin\Debug\net6.0\Content\Sprite Pack 4\9 - Mr._Circuit_Idle (32 x 32).xnb
 C:\Users\Jamie\Documents\GitHub\learningWithSato\learningWithSato\bin\Debug\net6.0\Content\Sprite Pack 4\9 - Mr._Circuit_Running (32 x 32).xnb
 C:\Users\Jamie\Documents\GitHub\learningWithSato\learningWithSato\bin\Debug\net6.0\Content\BaseFont.xnb
+C:\Users\Jamie\Documents\GitHub\learningWithSato\learningWithSato\bin\Debug\net6.0\Content\Sato Assets\tileset.xnb

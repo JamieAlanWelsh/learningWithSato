@@ -9,6 +9,7 @@
     <File>C:/Users/Jamie/Documents/GitHub/learningWithSato/learningWithSato/Content/Cave Tileset/Brown_Tile_Terrain (16 x 16).png</File>
     <File>C:/Users/Jamie/Documents/GitHub/learningWithSato/learningWithSato/Content/Cave Tileset/Gray_Tile_Terrain (16 x 16).png</File>
     <File>C:/Users/Jamie/Documents/GitHub/learningWithSato/learningWithSato/Content/Cave Tileset/Scaffolding_and_BG_Parts (16 x 16).png</File>
+    <File>C:/Users/Jamie/Documents/GitHub/learningWithSato/learningWithSato/Content/Sato Assets/tileset.png</File>
     <File>C:/Users/Jamie/Documents/GitHub/learningWithSato/learningWithSato/Content/Sprite Pack 4/1 - Agent_Mike_Bullet (16 x 16).png</File>
     <File>C:/Users/Jamie/Documents/GitHub/learningWithSato/learningWithSato/Content/Sprite Pack 4/1 - Agent_Mike_Hurt (32 x 32).png</File>
     <File>C:/Users/Jamie/Documents/GitHub/learningWithSato/learningWithSato/Content/Sprite Pack 4/1 - Agent_Mike_Idle (32 x 32).png</File>
@@ -40,6 +41,7 @@
     <File>C:/Users/Jamie/Documents/GitHub/learningWithSato/learningWithSato/Content/Sprite Pack 4/9 - Mr._Circuit_Running (32 x 32).png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
