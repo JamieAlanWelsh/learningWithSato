@@ -60,10 +60,6 @@ public class Player
     {
         KeyboardState keyboard=Keyboard.GetState();
 
-        // prevPosition = position;
-
-        // hitbox = new Rectangle((int)position.X-16, (int)position.Y-16, 32, 32);
-
         playerAnimationController = currentState.idle;
 
         float changeX = 0;
@@ -71,14 +67,12 @@ public class Player
         // UPDATE X POSITION
         if(keyboard.IsKeyDown(Keys.D))
         {
-            // position.X += speed;
             changeX += speed;
             playerAnimationController = currentState.run;
             spriteEffects = SpriteEffects.None;
         }
         if(keyboard.IsKeyDown(Keys.A))
         {
-            // position.X -= speed;
             changeX -= speed;
             playerAnimationController = currentState.run;
             spriteEffects = SpriteEffects.FlipHorizontally;
@@ -89,7 +83,6 @@ public class Player
         // check for X collisions
         if (collider.hitbox.Intersects(hitbox))
         {
-            // position = prevPosition;
             position.X -= changeX;
             hitbox.X -= (int)changeX;
             Debug.WriteLine("COLLISION!");
@@ -99,13 +92,11 @@ public class Player
         float changeY = 0;
         if(keyboard.IsKeyDown(Keys.W))
         {
-            // position.Y -= speed;
             changeY -= speed;
             playerAnimationController = currentState.run;
         }
         if(keyboard.IsKeyDown(Keys.S))
         {
-            // position.Y += speed;
             changeY += speed;
             playerAnimationController = currentState.run;
         }
@@ -115,7 +106,6 @@ public class Player
         // check for Y collisions
         if (collider.hitbox.Intersects(hitbox))
         {
-            // position = prevPosition;
             position.Y -= changeY;
             hitbox.Y -= (int)changeY;
             Debug.WriteLine("COLLISION!");
