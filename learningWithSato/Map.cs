@@ -45,7 +45,7 @@ public class Map
             for(int y=0; y < mapSize; y++)
             {
                 spriteBatch.Draw(tileSet, new Rectangle(x*16,y*16,16,16), grassTiles[mapArray[x,y]], Color.White);
-                spriteBatch.DrawString(assetManager.fonts["BaseFont"], mapArray[x,y].ToString(), new Vector2(x*16,y*16), Color.White);
+                // spriteBatch.DrawString(assetManager.fonts["BaseFont"], mapArray[x,y].ToString(), new Vector2(x*16,y*16), Color.White);
             }
         }
     }

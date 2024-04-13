@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Diagnostics;
+using System.Windows.Markup;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -45,11 +46,10 @@ public class Player
         playerAnimation = new PlayerAnimation[2];
         playerAnimation[0] = new PlayerAnimation(assetManager.textures["Sprite Pack 4\\1 - Agent_Mike_Idle (32 x 32)"], 32);
         playerAnimation[1] = new PlayerAnimation(assetManager.textures["Sprite Pack 4\\1 - Agent_Mike_Running (32 x 32)"], 32);
-
         currentAnimation = playerAnimation[0];
         // playerAnimationController = currentState.idle;
 
-        hitbox = new Rectangle((int)position.X, (int)position.Y, 32, 32);
+        hitbox = new Rectangle((int)position.X-16, (int)position.Y-24, 32, 32);
 
         // great way to display certain elements/variables onscreen for debug, but uses up a lot of memory
         Debug.WriteLine("Player created");
@@ -60,32 +60,68 @@ public class Player
     {
         KeyboardState keyboard=Keyboard.GetState();
 
-        prevPosition = position;
+        // prevPosition = position;
+
+        // hitbox = new Rectangle((int)position.X-16, (int)position.Y-16, 32, 32);
 
         playerAnimationController = currentState.idle;
 
+        float changeX = 0;
+
+        // UPDATE X POSITION
         if(keyboard.IsKeyDown(Keys.D))
         {
-            position.X += speed;
+            // position.X += speed;
+            changeX += speed;
             playerAnimationController = currentState.run;
             spriteEffects = SpriteEffects.None;
         }
         if(keyboard.IsKeyDown(Keys.A))
         {
-            position.X -= speed;
+            // position.X -= speed;
+            changeX -= speed;
             playerAnimationController = currentState.run;
             spriteEffects = SpriteEffects.FlipHorizontally;
         }
+        position.X += changeX;
+        hitbox.X += (int)changeX;
+
+        // check for X collisions
+        if (collider.hitbox.Intersects(hitbox))
+        {
+            // position = prevPosition;
+            position.X -= changeX;
+            hitbox.X -= (int)changeX;
+            Debug.WriteLine("COLLISION!");
+        }
+
+        // UPDATE Y POSITION
+        float changeY = 0;
         if(keyboard.IsKeyDown(Keys.W))
         {
-            position.Y -= speed;
+            // position.Y -= speed;
+            changeY -= speed;
             playerAnimationController = currentState.run;
         }
         if(keyboard.IsKeyDown(Keys.S))
         {
-            position.Y += speed;
+            // position.Y += speed;
+            changeY += speed;
             playerAnimationController = currentState.run;
         }
+        position.Y += changeY;
+        hitbox.Y += (int)changeY;
+
+        // check for Y collisions
+        if (collider.hitbox.Intersects(hitbox))
+        {
+            // position = prevPosition;
+            position.Y -= changeY;
+            hitbox.Y -= (int)changeY;
+            Debug.WriteLine("COLLISION!");
+        }
+
+        // rotate if R is held
         if(keyboard.IsKeyDown(Keys.R))
             rotation += 0.1f;
 
@@ -99,6 +135,7 @@ public class Player
         else
             color = Color.White;
 
+        // control animations
         switch (playerAnimationController)
         {
             case currentState.idle:
@@ -107,14 +144,6 @@ public class Player
             case currentState.run:
                 currentAnimation = playerAnimation[1];
                 break;
-        }
-
-        hitbox = new Rectangle((int)position.X-16, (int)position.Y-16, 32, 32);
-
-        if (collider.hitbox.Intersects(hitbox))
-        {
-            position = prevPosition;
-            Debug.WriteLine("COLLISION!");
         }
     }
 
