@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LearningWithSato")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b8b550861cdb644cec2a0197660dc6efcce63f8d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+703e1209a8f16586bc6e9abcffd202d5fd59ae76")]
 [assembly: System.Reflection.AssemblyProductAttribute("LearningWithSato")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LearningWithSato")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
